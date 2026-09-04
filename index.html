@@ -638,6 +638,165 @@
       .data-card { border-radius: 6px; }
       .footer-inner { min-height: 58px; }
     }
+
+    /* Disposition comparative des résultats */
+    .result-identity {
+      display: grid;
+      grid-template-columns: minmax(150px, .55fr) minmax(220px, .8fr) minmax(300px, 1.35fr);
+      min-height: 210px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .identity-logo,
+    .identity-photo,
+    .identity-copy {
+      min-width: 0;
+      min-height: 210px;
+    }
+    .identity-logo,
+    .identity-photo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+    .identity-logo {
+      padding: 24px;
+      border-right: 1px solid var(--line);
+    }
+    .identity-logo img {
+      width: 100%;
+      max-width: 180px;
+      max-height: 120px;
+      object-fit: contain;
+    }
+    .identity-copy {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 26px;
+      border-right: 1px solid var(--line);
+      background: var(--surface-alt);
+    }
+    .identity-copy::before {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--ermas-blue, #0c529a);
+      content: "";
+    }
+    .identity-kicker {
+      margin: 0 0 8px;
+      color: var(--cyan-dark);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .identity-title {
+      margin: 0;
+      color: #1f1f21;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+    .identity-variant { margin: 8px 0 0; color: var(--ink-soft); font-size: .86rem; }
+    .identity-photo { position: relative; overflow: hidden; }
+    .identity-photo img { width: 100%; height: 210px; display: block; object-fit: contain; }
+    .identity-photo a { width: 100%; height: 100%; display: block; }
+    .identity-photo-label {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      padding: 5px 8px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 3px;
+      background: rgba(13,13,13,.72);
+      color: #fff;
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+    .identity-placeholder { padding: 20px; color: var(--ink-soft); font-size: .78rem; text-align: center; }
+
+    .comparison-card { overflow: hidden; }
+    .comparison-scroll { width: 100%; overflow-x: auto; }
+    .tech-table { width: 100%; min-width: 680px; border-collapse: collapse; table-layout: fixed; }
+    .tech-table th,
+    .tech-table td { border: 1px solid var(--line); }
+    .tech-table thead th {
+      height: 46px;
+      padding: 9px 14px;
+      color: #1f1f21;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+    }
+    .tech-table .label-head { width: 31%; border-top: 0; border-left: 0; background: #fff; }
+    .tech-table .front-head { border-top: 4px solid #0c529a; background: #eaf2fa; }
+    .tech-table .rear-head { border-top: 4px solid #b4042b; background: #fff1f3; }
+    .tech-table tbody th {
+      width: 31%;
+      padding: 10px 14px;
+      background: #f8f9fa;
+      color: #222326;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    .tech-table tbody td {
+      padding: 10px 16px;
+      background: #fff;
+      color: #222326;
+      font-size: .93rem;
+      font-weight: 650;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+    .tech-table tbody tr:nth-child(even):not(.table-break) th,
+    .tech-table tbody tr:nth-child(even):not(.table-break) td { background: #f8f9fa; }
+    .tech-table .missing-value { color: #a1a7ad; font-weight: 500; }
+    .tech-table .comment-row th,
+    .tech-table .comment-row td { min-height: 84px; padding-block: 22px; }
+    .tech-table .table-break td { height: 12px; padding: 0; border-inline: 0; background: var(--paper); }
+    .tech-table .table-break td:first-child { border-left: 0; }
+    .table-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    .table-caption strong { color: #1f1f21; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
+    .table-caption span { color: var(--ink-soft); font-size: .72rem; }
+
+    @media (max-width: 820px) {
+      .result-identity { grid-template-columns: 170px minmax(0, 1fr); }
+      .identity-logo { grid-row: 1; }
+      .identity-copy { grid-row: 1; border-right: 0; }
+      .identity-photo { grid-column: 1 / -1; min-height: 260px; border-top: 1px solid var(--line); }
+      .identity-photo img { height: 260px; }
+    }
+    @media (max-width: 590px) {
+      .result-identity { grid-template-columns: 112px minmax(0, 1fr); min-height: 150px; }
+      .identity-logo, .identity-copy { min-height: 150px; }
+      .identity-logo { padding: 15px; }
+      .identity-copy { padding: 20px 16px; }
+      .identity-title { font-size: 1.15rem; }
+      .identity-photo, .identity-photo img { min-height: 210px; height: 210px; }
+      .comparison-card { border-radius: 6px; }
+      .table-caption { align-items: flex-start; flex-direction: column; gap: 2px; }
+    }
   </style>
 </head>
 <body>
@@ -890,6 +1049,128 @@
       return card;
     }
 
+    function identityVisual(url, title, className) {
+      const container = document.createElement('div');
+      container.className = className;
+      if (!url) {
+        const placeholder = document.createElement('span');
+        placeholder.className = 'identity-placeholder';
+        placeholder.textContent = `${title} non renseigné`;
+        container.append(placeholder);
+        return container;
+      }
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.title = `Ouvrir : ${title}`;
+      const image = document.createElement('img');
+      image.src = drivePreviewUrl(url);
+      image.alt = title;
+      image.loading = 'lazy';
+      image.referrerPolicy = 'no-referrer';
+      image.addEventListener('error', () => {
+        link.replaceWith(Object.assign(document.createElement('span'), {
+          className: 'identity-placeholder',
+          textContent: `${title} indisponible`
+        }));
+      }, { once: true });
+      link.append(image);
+      container.append(link);
+      if (className === 'identity-photo') {
+        const label = document.createElement('span');
+        label.className = 'identity-photo-label';
+        label.textContent = 'Photo de l’engin';
+        container.append(label);
+      }
+      return container;
+    }
+
+    function resultIdentity(record) {
+      const header = document.createElement('article');
+      header.className = 'data-card result-identity';
+      const copy = document.createElement('div');
+      copy.className = 'identity-copy';
+      const kicker = document.createElement('p');
+      kicker.className = 'identity-kicker';
+      kicker.textContent = 'Engin sélectionné';
+      const title = document.createElement('h3');
+      title.className = 'identity-title';
+      title.textContent = `${record.MARQUE} · ${record.MODELE}`;
+      const variant = document.createElement('p');
+      variant.className = 'identity-variant';
+      variant.textContent = `Variante ${record.VARIANTE}`;
+      copy.append(kicker, title, variant);
+      header.append(
+        identityVisual(record['LOGO MARQUE'], `Logo ${record.MARQUE}`, 'identity-logo'),
+        copy,
+        identityVisual(record['PHOTO ENGIN'], `${record.MARQUE} ${record.MODELE}`, 'identity-photo')
+      );
+      return header;
+    }
+
+    const comparisonRows = [
+      ['Famille', 'FAM_AV', 'FAM_AR'],
+      ['Mini', 'MINI_AV', 'MINI_AR'],
+      ['Maxi', 'MAXI_AV', 'MAXI_AR'],
+      ['break'],
+      ['Nombre de trous', 'NB_TROUS_AV', 'NB_TROUS_AR'],
+      ['Ø goujon', 'DIAM_GOUJON_AV', 'DIAM_GOUJON_AR'],
+      ['Ø perçage', 'Ø PERCAGE AV', 'Ø PERCAGE AR'],
+      ['Type serrage', 'TYPE_SERRAGE_AV', 'TYPE_SERRAGE_AR'],
+      ['Implantation', 'Implantation_av', 'Implantation_AR'],
+      ['Alésage', 'ALESAGE_AV', 'ALESAGE_AR'],
+      ['break'],
+      ['Longueur réducteur', 'LG_REDUCTEUR_AV', 'LG_REDUCTEUR_AR'],
+      ['Implantation ext. voile', 'Impl_EXT_VOILE_AV', 'Impl_EXT_VOILE_AR'],
+      ['Creux voile', 'Creux_Voile_AV', 'Creux_Voile_AR'],
+      ['Commentaire', 'Commentaire_AV', 'Commentaire_AR', 'comment-row']
+    ];
+
+    function comparisonCell(value) {
+      const cell = document.createElement('td');
+      cell.textContent = value || '—';
+      if (!value) cell.className = 'missing-value';
+      return cell;
+    }
+
+    function comparisonTable(record) {
+      const card = document.createElement('article');
+      card.className = 'data-card comparison-card';
+      const caption = document.createElement('div');
+      caption.className = 'table-caption';
+      caption.innerHTML = '<strong>Caractéristiques de montage</strong><span>Comparaison avant / arrière</span>';
+      const scroll = document.createElement('div');
+      scroll.className = 'comparison-scroll';
+      scroll.tabIndex = 0;
+      scroll.setAttribute('aria-label', 'Tableau comparatif, défilement horizontal sur petit écran');
+      const table = document.createElement('table');
+      table.className = 'tech-table';
+      table.innerHTML = '<thead><tr><th class="label-head"><span class="sr-only">Caractéristique</span></th><th class="front-head" scope="col">Avant</th><th class="rear-head" scope="col">Arrière</th></tr></thead>';
+      const body = document.createElement('tbody');
+      comparisonRows.forEach(([label, frontKey, rearKey, rowClass]) => {
+        const row = document.createElement('tr');
+        if (label === 'break') {
+          row.className = 'table-break';
+          const spacer = document.createElement('td');
+          spacer.colSpan = 3;
+          spacer.setAttribute('aria-hidden', 'true');
+          row.append(spacer);
+        } else {
+          if (rowClass) row.className = rowClass;
+          const heading = document.createElement('th');
+          heading.scope = 'row';
+          heading.textContent = label;
+          row.append(heading, comparisonCell(record[frontKey]), comparisonCell(record[rearKey]));
+        }
+        body.append(row);
+      });
+      table.append(body);
+      scroll.append(table);
+      card.append(caption, scroll);
+      return card;
+    }
+
     function renderResults(matches) {
       ui.configurations.replaceChildren();
       ui.resultTitle.textContent = `${ui.brand.value} · ${ui.model.value}`;
@@ -904,10 +1185,7 @@
           label.textContent = `Configuration ${index + 1}`;
           section.append(label);
         }
-        const grid = document.createElement('div');
-        grid.className = 'axle-grid';
-        grid.append(axleCard(record, 'front'), axleCard(record, 'rear'));
-        section.append(grid, mediaCard(record));
+        section.append(resultIdentity(record), comparisonTable(record));
         ui.configurations.append(section);
       });
       ui.empty.hidden = true;
