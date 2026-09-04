@@ -1,4 +1,4 @@
-const CACHE_NAME = 'base-engins-v1';
+const CACHE_NAME = 'base-engins-v2';
 const APP_SHELL = ['./', './index.html', './manifest.webmanifest', './app-icon.svg'];
 
 self.addEventListener('install', event => {
