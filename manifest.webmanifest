@@ -1,0 +1,20 @@
+{
+  "name": "Base engins ERMAS",
+  "short_name": "Base engins",
+  "description": "Consultation des caractéristiques de montage des engins.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
