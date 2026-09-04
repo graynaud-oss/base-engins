@@ -859,6 +859,32 @@
       body.has-results .tech-table .comment-row td { min-height: 0; padding-block: 6px; }
       body.has-results footer { display: none; }
     }
+
+    @media (min-width: 1400px) {
+      .topbar-inner, main, .footer-inner { width: min(1540px, calc(100% - 48px)); }
+      body.has-results main { padding-top: 14px; }
+      body.has-results .selector-card { padding: 14px 20px 16px; }
+      body.has-results .result-identity {
+        grid-template-columns: minmax(180px, .5fr) minmax(280px, .78fr) minmax(520px, 1.55fr);
+        min-height: 138px;
+        margin-bottom: 10px;
+      }
+      body.has-results .identity-logo,
+      body.has-results .identity-copy,
+      body.has-results .identity-photo { min-height: 138px; }
+      body.has-results .identity-logo { padding: 16px 24px; }
+      body.has-results .identity-logo img { max-width: 220px; max-height: 94px; }
+      body.has-results .identity-copy { padding: 20px 24px; }
+      body.has-results .identity-title { font-size: 1.45rem; }
+      body.has-results .identity-photo img { height: 138px; }
+      body.has-results .tech-table thead th { height: 40px; padding: 7px 14px; font-size: .84rem; }
+      body.has-results .tech-table tbody th,
+      body.has-results .tech-table tbody td { padding: 6px 14px; font-size: .76rem; line-height: 1.18; }
+      body.has-results .tech-table tbody td { font-size: .88rem; }
+      body.has-results .tech-table .table-break td { height: 7px; }
+      body.has-results .tech-table .comment-row th,
+      body.has-results .tech-table .comment-row td { padding-block: 8px; }
+    }
   </style>
 </head>
 <body>
