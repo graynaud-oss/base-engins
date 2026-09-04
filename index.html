@@ -1110,7 +1110,7 @@
     }
 
     const comparisonRows = [
-      ['Famille', 'FAM_AV', 'FAM_AR'],
+      ['FAM', 'FAM_AV', 'FAM_AR'],
       ['Mini', 'MINI_AV', 'MINI_AR'],
       ['Maxi', 'MAXI_AV', 'MAXI_AR'],
       ['break'],
@@ -1137,9 +1137,6 @@
     function comparisonTable(record) {
       const card = document.createElement('article');
       card.className = 'data-card comparison-card';
-      const caption = document.createElement('div');
-      caption.className = 'table-caption';
-      caption.innerHTML = '<strong>Caractéristiques de montage</strong><span>Comparaison avant / arrière</span>';
       const scroll = document.createElement('div');
       scroll.className = 'comparison-scroll';
       scroll.tabIndex = 0;
@@ -1167,7 +1164,7 @@
       });
       table.append(body);
       scroll.append(table);
-      card.append(caption, scroll);
+      card.append(scroll);
       return card;
     }
 
